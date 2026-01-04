@@ -1,0 +1,157 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  ;
+}
+
+body {
+  background: #0f1020;
+  perspective: 1200px;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 100vh;
+  padding: 80px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(90deg, #0f1020 73%, #b78cff 27%);
+  position: relative;
+  overflow: hidden;
+}
+.content,.p{
+  font-size: 30px;
+  color: white;
+  position : center;
+  font-family:t
+}
+.hello {
+  font-size: 23px;
+  margin-bottom: 10px;
+}
+
+h1 {
+  font-size: 50px;
+  line-height: 1.2;
+}
+
+h1 span {
+  color: #d859c9;
+}
+.sub-text {
+  font-size: 40px;
+  color: #ccc;
+}
+.btn {
+  margin-top: 30px;
+  padding: 12px 24px;
+  border: 2px solid #b78cff;
+  background: transparent;
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 5px;
+}
+
+.btn:hover {
+
+  border: 2px solid #6a0871;
+  color: #fa8cf3;
+}
+
+/* IMAGE SECTION */
+.image-box {
+  position: relative;
+  width: 320px;
+  height: 420px;
+  z-index: 2;
+}
+
+.image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 14px;
+}
+
+/* PURPLE OVERLAP (SHORT WIDTH) */
+.image-box::before {
+  content: "";
+  position: absolute;
+  right: -35px;
+  top: 0;
+  width: 70px;
+  height: 100%;
+  background: #b78cff;
+  z-index: -1;
+  border-radius: 12px;
+}
+
+/* 3D HOLLOW ROTATING CIRCLE */
+.ring {
+  position: absolute;
+  left: -55px; 
+  top: 340px;
+  width: 88px;
+  height: 88px;
+  border: 6px solid;
+  border-image: linear-gradient(135deg, white, #630c6b) 1;
+  border-radius: 90%;
+  background: transparent;
+  animation: ring3d 6s ease-in-out infinite;
+  transform-style: preserve-3d;
+  animation: ring3d 4s linear infinite;
+}
+
+/* 3D ANIMATION */
+@keyframes ring3d {
+  0% {
+    transform: rotateX(0deg) rotateY(0deg) translateZ(0);
+  }
+  50% {
+    transform: rotateX(25deg) rotateY(180deg) translateZ(40px);
+  }
+  100% {
+    transform: rotateX(0deg) rotateY(360deg) translateZ(0);
+  }
+}
+
+/* THIN FLOWING LINE - LEFT */
+.left-line {
+  position: absolute;
+  left: 28px;
+  top: -60px;
+  width: 3px;
+  height: 140%;
+  background: linear-gradient(180deg, white, #721c71, rgb(255, 255, 255));
+  background-size: 100% 300%;
+  animation:  liquidY 6s ease-in-out infinite;
+}
+
+/* THIN FLOWING LINE - BOTTOM */
+.bottom-line {
+  position: absolute;
+  bottom: 32px;
+  left: -60px;
+  width: 140%;
+  height: 3px;
+  background: linear-gradient(90deg, white,#78276f, rgb(255, 255, 255));
+  background-size: 300% 100%;
+  animation: liquidX 7s ease-in-out infinite;
+}
+
+/* FLOW KEYFRAMES */
+@keyframes liquidY {
+  0% { background-position: 0 0; }
+  50% { background-position: 0 200%; }
+  100% { background-position: 0 400%; }
+}
+
+@keyframes liquidX {
+  0% { background-position: 0 0; }
+  50% { background-position: 200% 0; }
+  100% { background-position: 400% 0; }
+}

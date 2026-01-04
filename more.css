@@ -1,0 +1,216 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  min-height: 100vh;
+  background: linear-gradient(#000000, #271528);
+  color: white;
+  display: flex;
+}
+/* SIDEBAR */
+.sidebar {
+  position: fixed;
+  width: 250px;
+  height: 96vh;
+  margin: 20px;
+  padding: 30px 20px;
+  background: linear-gradient(rgb(53, 11, 46), rgb(0, 0, 0));
+  border-radius: 40px;
+  backdrop-filter: blur(12px);
+  box-shadow: 0 20px 40px rgba(28, 27, 27, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.profile h2 {
+  margin-bottom: 20px;
+}
+.side-tabs {
+  display: flex;
+  flex-direction: column;
+  gap: 55px;
+}
+.tab {
+  padding: 20px;
+  background: transparent;
+  border: 2px inset #9c249c;
+  color: white;
+  cursor: pointer;
+  text-align: left;
+  border-radius: 8px;
+  transition: 0.3s;
+}
+.tab.active,
+.tab:hover {
+  background: #531557;
+  border: 2px solid #ef0df3;
+}
+.contact-info {
+  margin-top: 90px;
+}
+.contact-info p {
+  font-size: 14px;
+  margin: 8px 0;
+}
+.contact-info strong {
+  color: #e683ff;
+}
+.back-tab {
+  text-decoration: none;
+  display: block;
+}
+
+/* MAIN CONTENT */
+.main-content {
+  margin-left: 300px;
+  padding: 80px;
+}
+.content-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 25px;
+  padding: 60px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 10px 30px rgb(95, 94, 94);
+  height:70vh;
+  overflow-y: auto;
+}
+#about p {
+  font-size: 22px;
+  line-height: 1.2;
+}
+#about h2 {
+  color: #9f7cdb;
+}
+span {
+  font-weight: bolder;
+  color: #23ac16;
+}
+
+@media (max-width: 768px) {
+  body {
+    flex-direction: column;
+  }
+  .sidebar {
+    position: relative;
+    width: 90%;
+    height: auto;
+    margin: 20px auto;
+  }
+  .main-content {
+    margin-left: 0;
+    padding: 20px;
+  }
+
+  }
+
+/* Profile Overview Title */
+.overview-title {
+  color: #d6b3ff;
+  margin-bottom: 40px;
+}
+.section {
+  display: none;
+}
+.section.active {
+  display: block;
+}
+#overview {
+ font-size:22px;
+  padding-left: 40px;
+}
+/* Horizontal row */
+.overview-row {
+  display: flex;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  gap: 90px;                /* space between items */
+  align-items: flex-start;
+  justify-content: flex-start;   /* keeps them at top */
+}
+
+/* Each item */
+.overview-row details {
+  width: 225px;
+
+}
+
+/* Clickable heading */
+.overview-row summary {
+  list-style: none;
+  cursor: pointer;
+  padding: 14px 20px;
+  border-radius: 14px;
+  background: rgba(162, 58, 58, 0.08);
+  color: #2aa523;
+  font-weight: 600;
+  text-align: center;
+  text-decoration:dotted underline;
+}
+
+/* Remove default arrow */
+.overview-row summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Custom arrow */
+.overview-row summary::after {
+  margin-left: 8px;
+}
+
+/* Dropdown content */
+.overview-row ul {
+  margin-top: 14px;
+  padding-left: 20px;
+}
+
+.overview-row li {
+  color: #e089be;
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+/* PROJECTS SECTION */
+.projects-section {
+  margin-top: 80px;
+}
+
+.projects-title {
+  color: #d6b3ff;
+  margin-bottom: 30px;
+}
+
+/* Project Card */
+.project-card {
+  display: block;
+  max-width: 800px;
+  padding: 0;                /* remove inner space */
+  border-radius: 0;          /*  no box shape */
+  text-decoration: none;
+  background: none;          /* remove background box */
+  backdrop-filter: none;     /*  remove blur */
+  box-shadow: none;          /*  remove shadow */
+  transition: transform 0.3s ease;
+}
+.project-card h3 {
+  color: #ffffff;
+  margin-bottom: 10px;
+}
+.project-image {
+  width: 100%;
+  max-width: 800px;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease;
+}
+.project-card:hover .project-image {
+  transform: scale(1.03);
+}
+.button {
+  text-decoration: none;
+  margin-top: 70px;
+  padding: 10px 20px;
+  background: transparent;
+  border: 2px inset #fc49fc;
+}
